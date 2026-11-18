@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio By Anderson</title>
+<meta name="description" content="Derrick Anderson — Dallas real estate agent for New York relocations and Airbnb investors, short-term rental host, educator, and founder of Darbio and Candor Social.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sign:#142640;
+    --ground:#EEF1F4;
+    --ink:#1A2433;
+    --muted:#566273;
+    --white:#FFFFFF;
+    --re:#1F7A4D;
+    --st:#E39B0F;
+    --da:#2D6CDF;
+    --ed:#6B4FBB;
+    --ca:#C2185B;
+    --jo:#0E8A8A;
+    --display:"Archivo", "Helvetica Neue", Arial, sans-serif;
+    --body:"Literata", Georgia, serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+  body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.7}
+  a{color:inherit}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid #FFC845;outline-offset:3px;border-radius:4px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  .sign{background:var(--sign);color:var(--white);padding:28px 0 56px;border-bottom:10px solid #0F1D31}
+  .sign-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-family:var(--display);font-stretch:100%;font-weight:600;font-size:.95rem}
+  .sign-top a{text-decoration:none;opacity:.85}
+  .sign-top a:hover{opacity:1;text-decoration:underline}
+  h1{font-family:var(--display);font-stretch:68%;font-weight:850;font-size:clamp(3.6rem,12vw,9.5rem);line-height:.88;letter-spacing:-.01em;margin:64px 0 18px}
+  .tagline{font-family:var(--display);font-stretch:112%;font-weight:500;font-size:clamp(1.05rem,2.1vw,1.35rem);max-width:44ch;line-height:1.45;margin:0 0 36px;color:#D6DEEA}
+  .lines{display:flex;flex-wrap:wrap;gap:10px 22px;list-style:none;margin:0 0 40px;padding:0}
+  .lines a{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:600;font-stretch:95%}
+  .lines a:hover span.n{text-decoration:underline;text-underline-offset:4px}
+  .bullet{display:inline-grid;place-items:center;width:2.1em;height:2.1em;border-radius:50%;font-family:var(--display);font-weight:800;font-stretch:100%;color:#fff;flex:none;line-height:1}
+  .b-re{background:var(--re)} .b-st{background:var(--st);color:#1A2433} .b-da{background:var(--da)}
+  .b-ed{background:var(--ed)} .b-ca{background:var(--ca)} .b-jo{background:var(--jo)}
+  .cta{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-block;padding:13px 22px;border-radius:999px;font-family:var(--display);font-weight:700;font-stretch:100%;text-decoration:none;font-size:1rem}
+  .btn-primary{background:#FFC845;color:var(--sign)}
+  .btn-ghost{border:2px solid rgba(255,255,255,.5);color:#fff}
+  .btn-primary:hover{background:#FFD873}.btn-ghost:hover{border-color:#fff}
+
+  main{position:relative}
+  .stop{position:relative;padding:72px 0 72px 0}
+  .stop-grid{display:grid;grid-template-columns:96px 1fr;gap:0 28px}
+  .rail{position:relative}
+  .rail::before{content:"";position:absolute;left:30px;top:-72px;bottom:-72px;width:12px;background:var(--c)}
+  .stop:first-child .rail::before{top:0}
+  .stop:last-child .rail::before{bottom:auto;height:calc(72px + 2.2rem)}
+  .rail .bullet{position:relative;font-size:1.55rem;width:72px;height:72px;box-shadow:0 0 0 6px var(--ground)}
+  .stop h2{font-family:var(--display);font-stretch:75%;font-weight:800;font-size:clamp(2.2rem,5vw,3.4rem);line-height:1;margin:10px 0 6px}
+  .stop .lede{font-family:var(--display);font-stretch:105%;font-weight:500;font-size:1.2rem;color:var(--muted);margin:0 0 26px;max-width:52ch;line-height:1.45}
+  .stop p{max-width:66ch;margin:0 0 1em}
+  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px 34px;margin:26px 0 8px}
+  .cols h3{font-family:var(--display);font-stretch:95%;font-weight:700;font-size:1.12rem;margin:0 0 4px;line-height:1.3}
+  .cols p{margin:0;font-size:1rem;color:#2E3949}
+  .facts{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0;padding:0;list-style:none}
+  .facts li{font-family:var(--display);font-weight:600;font-stretch:100%;font-size:.92rem;background:var(--white);border:1px solid #D3DAE3;padding:6px 12px;border-radius:6px}
+  .more{margin-top:24px;font-family:var(--display);font-weight:700;font-stretch:100%}
+  .more a{color:var(--c);text-decoration-thickness:2px;text-underline-offset:4px}
+  .pitch{font-family:var(--display);font-stretch:85%;font-weight:700;font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.2;max-width:30ch;margin:0 0 22px;border-left:6px solid var(--c);padding-left:18px}
+
+  details{background:var(--white);border:1px solid #D3DAE3;border-radius:10px;margin:0 0 12px;max-width:760px}
+  summary{cursor:pointer;list-style:none;padding:18px 22px;font-family:var(--display);font-stretch:95%;font-weight:700;font-size:1.15rem;display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+  summary::-webkit-details-marker{display:none}
+  summary small{font-weight:500;color:var(--muted);font-size:.9rem;white-space:nowrap}
+  summary::after{content:"+";font-weight:700;color:var(--jo);font-size:1.4rem;line-height:1}
+  details[open] summary::after{content:"−"}
+  .post{padding:0 22px 20px}
+  .post p{font-size:1rem}
+
+  .terminal{background:var(--sign);color:#fff;padding:72px 0 40px;margin-top:0}
+  .terminal h2{font-family:var(--display);font-stretch:70%;font-weight:850;font-size:clamp(2.6rem,7vw,5rem);line-height:.95;margin:0 0 18px}
+  .terminal p{color:#D6DEEA;max-width:56ch}
+  .contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin:32px 0 48px}
+  .contact div{border-top:3px solid #FFC845;padding-top:12px}
+  .contact h3{font-family:var(--display);font-weight:600;font-stretch:100%;font-size:.95rem;color:#AFC0D6;margin:0 0 4px}
+  .contact a{font-family:var(--display);font-weight:700;font-stretch:100%;font-size:1.15rem;text-decoration:none;word-break:break-word}
+  .contact a:hover{text-decoration:underline}
+  .legal{border-top:1px solid rgba(255,255,255,.18);padding-top:22px;font-size:.88rem;color:#AFC0D6;display:flex;flex-wrap:wrap;gap:8px 26px;justify-content:space-between}
+  .legal a{color:#fff}
+
+  @media (max-width:640px){
+    .stop-grid{grid-template-columns:52px 1fr;gap:0 16px}
+    .rail::before{left:17px;width:8px}
+    .rail .bullet{width:42px;height:42px;font-size:1rem;box-shadow:0 0 0 4px var(--ground)}
+    .stop:last-child .rail::before{height:calc(72px + 1.3rem)}
+    .stop{padding:56px 0}
+    .rail::before{top:-56px;bottom:-56px}
+    h1{margin-top:44px}
+  }
+</style>
+</head>
+<body>
+
+<header class="sign">
+  <div class="wrap">
+    <div class="sign-top">
+      <span>Portfolio By Anderson</span>
+      <a href="#contact">Contact</a>
+    </div>
+    <h1>Derrick<br>Anderson</h1>
+    <p class="tagline">New Yorker turned Dallas homeowner, real estate agent, short-term rental host and teacher. Everything I do lives on this page.</p>
+    <ul class="lines" aria-label="Sections">
+      <li><a href="#real-estate"><span class="bullet b-re" aria-hidden="true">R</span><span class="n">Real estate</span></a></li>
+      <li><a href="#stays"><span class="bullet b-st" aria-hidden="true">S</span><span class="n">Stays</span></a></li>
+      <li><a href="#darbio"><span class="bullet b-da" aria-hidden="true">D</span><span class="n">Darbio</span></a></li>
+      <li><a href="#teaching"><span class="bullet b-ed" aria-hidden="true">T</span><span class="n">Teaching</span></a></li>
+      <li><a href="#candor"><span class="bullet b-ca" aria-hidden="true">C</span><span class="n">Events &amp; music</span></a></li>
+      <li><a href="#journal"><span class="bullet b-jo" aria-hidden="true">J</span><span class="n">Journal</span></a></li>
+    </ul>
+    <div class="cta">
+      <a class="btn btn-primary" href="mailto:derrick@portfoliobyanderson.com">Email Derrick</a>
+      <a class="btn btn-ghost" href="tel:+19294512009">Call (929) 451-2009</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="stop" id="real-estate" style="--c:var(--re)">
+    <div class="wrap stop-grid">
+      <div class="rail"><span class="bullet b-re" aria-hidden="true">R</span></div>
+      <div>
+        <h2>Real estate</h2>
+        <p class="lede">Dallas–Fort Worth agent with Pinnacle Realty Advisors.</p>
+        <p class="pitch">I help New Yorkers relocate to Dallas, and I help investors find and run Airbnb properties, because I've done both myself.</p>
+        <div class="cols">
+          <div><h3>Moving from New York</h3><p>I made the same move about five years ago. I'll walk you through neighborhoods, commutes, schools and what your money buys here before you ever get on a plane.</p></div>
+          <div><h3>Short-term rental investors</h3><p>I run my own rental on Airbnb, Vrbo and more. I can help you pick a property that will actually book, then set it up and price it.</p></div>
+          <div><h3>Buyers</h3><p>First homes, FHA loans and HUD homes. I bought my own new-construction home in South Dallas in 2023 and know the process from the buyer's seat.</p></div>
+          <div><h3>Renters and landlords</h3><p>Leasing help for people relocating to DFW from out of state, and tenant placement for landlords.</p></div>
+          <div><h3>Small commercial leases</h3><p>Office and retail space for growing businesses.</p></div>
+        </div>
+        <p class="more"><a href="mailto:derrick@portfoliobyanderson.com?subject=Real%20estate%20inquiry">Tell me what you're looking for</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stop" id="stays" style="--c:var(--st)">
+    <div class="wrap stop-grid">
+      <div class="rail"><span class="bullet b-st" aria-hidden="true">S</span></div>
+      <div>
+        <h2>Backyard Oasis</h2>
+        <p class="lede">A 3-bedroom home near Fair Park and Downtown Dallas, with a fire pit and pergola lounge out back.</p>
+        <p>Book the whole house for a weekend with friends, a room for a work trip, or the backyard for a few hours for a shoot or small event. Monthly stays are welcome too, with utilities and gigabit internet included.</p>
+        <ul class="facts">
+          <li>Sleeps 8</li><li>3 bedrooms · 2 baths</li><li>Fire pit &amp; pergola lounge</li><li>Events up to 25 guests, by request</li><li>Stays up to 30 nights</li><li>Gigabit Wi-Fi</li>
+        </ul>
+        <div class="cols">
+          <div><h3>Whole house</h3><p>Listed on Airbnb, Vrbo and Booking.com.</p></div>
+          <div><h3>Single rooms</h3><p>Private rooms, including a master suite with its own bathroom.</p></div>
+          <div><h3>Backyard by the hour</h3><p>For photo shoots, birthdays and small gatherings, booked through Peerspace.</p></div>
+        </div>
+        <p class="more"><a href="https://www.vrbo.com/5545022">See photos and dates on Vrbo</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stop" id="darbio" style="--c:var(--da)">
+    <div class="wrap stop-grid">
+      <div class="rail"><span class="bullet b-da" aria-hidden="true">D</span></div>
+      <div>
+        <h2>Darbio</h2>
+        <p class="lede">Recreational fitness with giant inflatable Zorb balls, running since 2019.</p>
+        <p>I started Darbio to get people moving and laughing together. We've used it for teacher professional development, as a reward for students, and for private parties.</p>
+        <div class="cols">
+          <div><h3>Team building</h3><p>Staff days and professional development that people actually remember.</p></div>
+          <div><h3>School incentives</h3><p>A reward day students will work toward all semester.</p></div>
+          <div><h3>Private parties</h3><p>Birthdays, reunions and backyard events.</p></div>
+        </div>
+        <p class="more"><a href="mailto:derrick@portfoliobyanderson.com?subject=Darbio%20booking">Book Darbio for your event</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stop" id="teaching" style="--c:var(--ed)">
+    <div class="wrap stop-grid">
+      <div class="rail"><span class="bullet b-ed" aria-hidden="true">T</span></div>
+      <div>
+        <h2>Teaching</h2>
+        <p class="lede">15 years in education, most recently as a special education inclusion teacher in Dallas.</p>
+        <p>I train teachers on curriculum and coach math. I've mentored 18 teachers, and I lead a math professional learning community where I model a lesson first, then we practice it together, then teachers take it into their own classrooms.</p>
+        <p>The same patience shows up in my real estate work: I explain every step until it makes sense.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stop" id="candor" style="--c:var(--ca)">
+    <div class="wrap stop-grid">
+      <div class="rail"><span class="bullet b-ca" aria-hidden="true">C</span></div>
+      <div>
+        <h2>Events &amp; music</h2>
+        <p class="lede">Nights out, and marketing for artists.</p>
+        <div class="cols">
+          <div><h3>Candor Social</h3><p>A grown and sexy social brand with house music, R&amp;B and hookah, created with DJ Sherman Livingston. We host everything from small socials to large events. Follow @candorsocial.</p></div>
+          <div><h3>Music marketing</h3><p>Social media and pre-launch brand building for music releases, so an artist's platforms are ready before the song drops.</p></div>
+        </div>
+        <p class="more"><a href="mailto:derrick@portfoliobyanderson.com?subject=Events%20or%20music%20marketing">Plan an event or a release with me</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stop" id="journal" style="--c:var(--jo)">
+    <div class="wrap stop-grid">
+      <div class="rail"><span class="bullet b-jo" aria-hidden="true">J</span></div>
+      <div>
+        <h2>Journal</h2>
+        <p class="lede">Notes for travelers and people thinking about moving to Dallas.</p>
+
+        <details>
+          <summary>New York to Dallas: what actually changes <small>Relocation</small></summary>
+          <div class="post">
+            <p>The first thing you notice is space. Bigger kitchens, real closets, a driveway. The second is that almost everything is a drive away, so plan your search around your commute, not just the house.</p>
+            <p>Texas has no state income tax, but property taxes are higher than many New Yorkers expect, so budget for them when you compare homes. Summers are long and hot; a good AC system matters more than a fireplace.</p>
+            <p>And people really do say hello to strangers here. You get used to it.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>A weekend around Fair Park <small>Travel</small></summary>
+          <div class="post">
+            <p>Fair Park is home to the State Fair of Texas every fall and to a collection of Art Deco buildings worth a slow walk any time of year. Check the calendar before you visit; something is usually happening on the grounds.</p>
+            <p>Deep Ellum is a short ride away for live music, murals and late-night food. Downtown and the Arts District are close too, so a stay near Fair Park puts you in the middle of it all.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What I learned in my first year hosting <small>Hosting</small></summary>
+          <div class="post">
+            <p>List on more than one platform, and keep every calendar in sync so you never double-book. Price your weeknights to stay competitive; weekends mostly take care of themselves.</p>
+            <p>Write clear house rules, say yes to guests who are upfront about their plans, and walk event guests through the space at check-in. Small habits like that earn the reviews.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="terminal" id="contact">
+  <div class="wrap">
+    <h2>Let's talk</h2>
+    <p>Buying, renting, investing, booking a stay or planning an event: send me a note and I'll get back to you.</p>
+    <div class="contact">
+      <div><h3>Email</h3><a href="mailto:derrick@portfoliobyanderson.com">derrick@portfoliobyanderson.com</a></div>
+      <div><h3>Phone</h3><a href="tel:+19294512009">(929) 451-2009</a></div>
+      <div><h3>Based in</h3><span style="font-family:var(--display);font-weight:700;font-size:1.15rem">South Dallas, Texas</span></div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Portfolio By Anderson · Derrick Anderson, Pinnacle Realty Advisors</span>
+      <span><a href="https://www.trec.texas.gov/forms/information-about-brokerage-services">Information About Brokerage Services</a> &nbsp; <a href="https://www.trec.texas.gov/forms/consumer-protection-notice">Texas Real Estate Commission Consumer Protection Notice</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
