@@ -68,7 +68,7 @@
   .ticker{background:rgba(253,252,250,.8);border-radius:999px;max-width:1020px;margin:0 auto 6px;padding:13px 30px;display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:center}
   .ticker span{font-family:var(--label);font-size:10.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--cocoa)}
 
-  /* ---------- Map (ice-cream cocoa panel) ---------- */
+  /* ---------- Map (dark fudge panel) ---------- */
   .mapsec{background:var(--cocoa);color:var(--white);padding:72px 0 60px;box-shadow:0 36px 70px -40px rgba(30,20,14,.65)}
   .mapsec h2{font-size:clamp(2.4rem,5vw,4rem);font-weight:460;line-height:1.02;letter-spacing:-.01em;margin:18px 0 10px}
   .mapsec h2 em{font-style:italic;color:var(--white)}
@@ -77,6 +77,14 @@
   .mapframe svg{display:block;width:100%;height:auto}
   .route{fill:none;stroke:#EFE6DD;stroke-width:1.5;stroke-dasharray:5 9;opacity:.85}
   @media (prefers-reduced-motion:no-preference){.route{animation:dash 28s linear infinite}@keyframes dash{to{stroke-dashoffset:-700}}}
+  .maplay{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:stretch}
+  .news{display:flex;flex-direction:column;gap:12px;min-width:0}
+  .news a{display:block;background:rgba(253,252,250,.96);border-radius:12px;padding:13px 16px;text-decoration:none;color:var(--fudge);transition:transform .15s,box-shadow .15s}
+  .news a:hover{transform:translateY(-2px);box-shadow:0 14px 26px -16px rgba(30,20,14,.6)}
+  .news .src{font-family:var(--label);font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--cocoa);display:block;margin-bottom:5px}
+  .news .hl{font-size:1rem;font-weight:470;line-height:1.4;display:block}
+  .news a.mine{background:var(--fudge);color:var(--white)}
+  .news a.mine .src{color:#F3E6DB}
   .mapnote{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--label);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#F0E3D8;margin-top:18px}
 
   /* ---------- White "bowl" panels ---------- */
@@ -101,6 +109,15 @@
   .gallery figure{margin:0;min-width:0}
   .gallery img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
   .gallery figcaption{font-family:var(--label);font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);padding:9px 4px 0}
+  .cal{margin:38px 0 4px}
+  .callbl{font-family:var(--label);font-size:.78rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--cocoa);margin:0 0 16px}
+  .seasons{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .season{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px}
+  .season .s-name{font-family:var(--label);font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--cocoa);display:block;margin-bottom:9px}
+  .season h4{font-family:var(--display);font-size:1.08rem;font-weight:600;margin:0 0 7px;color:var(--fudge)}
+  .season p{font-size:.865rem;line-height:1.55;color:var(--mut);margin:0}
+  .landmarks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+  .landmarks .season{border-left:4px solid var(--cocoa)}
 
   details{border:1px solid var(--line);border-radius:14px;margin:0 0 12px;max-width:780px;background:var(--cream);overflow:hidden}
   summary{cursor:pointer;list-style:none;padding:18px 22px;font-size:1.18rem;font-weight:470;display:flex;justify-content:space-between;gap:16px;align-items:baseline}
@@ -111,7 +128,7 @@
   .post{padding:0 22px 20px}
   .post p{font-size:1rem;max-width:62ch;color:var(--fudge-2)}
 
-  /* ---------- Terminal (ice-cream cocoa panel) ---------- */
+  /* ---------- Terminal (dark fudge panel) ---------- */
   .terminal{background:var(--cocoa);color:var(--white);padding:76px 0 44px;box-shadow:0 36px 70px -40px rgba(30,20,14,.65)}
   .terminal h2{font-size:clamp(2.8rem,6.5vw,4.6rem);font-weight:460;line-height:1;margin:16px 0 22px;letter-spacing:-.01em}
   .terminal h2 em{font-style:italic;color:var(--white)}
@@ -129,10 +146,15 @@
     .wrap{padding:0 22px}
     .panel{margin:18px auto;border-radius:20px}
     .hero{padding:48px 0 40px}
-    .hero-grid{grid-template-columns:1fr;gap:44px}
-    .photo{justify-self:center}
+    .hero-grid{grid-template-columns:1.25fr 1fr;gap:28px;align-items:center}
+    .photo{max-width:250px;justify-self:end}
     .ave,.mapsec{padding:54px 0}
+    .maplay{grid-template-columns:1fr} .seasons{grid-template-columns:1fr 1fr}
     .ticker{border-radius:20px}
+  }
+  @media (max-width:640px){
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .photo{justify-self:center;max-width:300px} .seasons,.landmarks{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -182,6 +204,7 @@
       <span class="lbl" style="color:#F3E6DB">The thesis</span>
       <h2>All roads lead <em>to Texas.</em></h2>
       <p class="sub">NYC · SEA · CHI · LA · MIA → Dallas–Fort Worth</p>
+      <div class="maplay">
       <div class="mapframe">
         <svg viewBox="0 0 980 600" role="img" aria-label="Map of the United States with arrows from New York, Seattle, Chicago, Los Angeles and Miami pointing to Dallas, Texas">
           <defs>
@@ -208,6 +231,14 @@
           <path d="M421 290 l6.2 12.6 13.9 2-10 9.8 2.4 13.8-12.5-6.5-12.5 6.5 2.4-13.8-10-9.8 13.9-2z" fill="#FDFCFA"/>
           <text x="440" y="336" style="font:600 13px Archivo,sans-serif;letter-spacing:.14em" fill="#FDFCFA">DALLAS, TX</text>
         </svg>
+      </div>
+      <div class="news">
+        <a href="https://www.npr.org/2026/08/04/nx-s1-5697067/texas-banking-goldman-sachs-wall-street" target="_blank" rel="noopener"><span class="src">NPR &middot; Aug 2026</span><span class="hl">Goldman Sachs' $700M Dallas campus &mdash; "the heart of Y'all Street" &mdash; fully opens in 2028.</span></a>
+        <a href="https://www.dallasobserver.com/news/dallas-hopes-yall-street-becomes-new-wall-street-40691807/" target="_blank" rel="noopener"><span class="src">Dallas Observer &middot; 2026</span><span class="hl">The Texas Stock Exchange starts trading as NYSE Texas and Nasdaq plant flags in Dallas.</span></a>
+        <a href="https://dallas.culturemap.com/news/innovation/corporate-headquarters-relocations-dfw" target="_blank" rel="noopener"><span class="src">CultureMap Dallas</span><span class="hl">Dallas&ndash;Fort Worth ranks No. 1 in the U.S. for corporate headquarters relocations.</span></a>
+        <a href="https://dallasinnovates.com/dallas-anchors-dfws-49-fortune-1000-headquarters-spread-across-11-cities/" target="_blank" rel="noopener"><span class="src">Dallas Innovates &middot; 2026</span><span class="hl">DFW holds 24 Fortune 500 headquarters &mdash; and AT&amp;T's new Plano campus arrives in 2028.</span></a>
+        <a class="mine" href="https://www.linkedin.com/in/portfoliobyanderson" target="_blank" rel="noopener"><span class="src">Derrick on LinkedIn</span><span class="hl">From Wall Street to Y'all Street &mdash; my running take on the migration I work in.</span></a>
+      </div>
       </div>
       <div class="mapnote"><span>Fig. 01 — The move I made myself, and the one I work in.</span><span>Portfolio By Anderson</span></div>
     </div>
@@ -247,6 +278,19 @@
         <div><h3>Whole house</h3><p>Listed on Airbnb, Vrbo and Booking.com.</p></div>
         <div><h3>Single rooms</h3><p>Private rooms, including a master suite with its own bathroom.</p></div>
         <div><h3>Backyard by the hour</h3><p>For photo shoots, birthdays and small gatherings, booked through Peerspace.</p></div>
+      </div>
+      <div class="cal">
+        <p class="callbl">While you're here &middot; The Dallas calendar</p>
+        <div class="seasons">
+          <div class="season"><span class="s-name">Spring</span><h4>Dallas in bloom</h4><p>The Arboretum turns into a sea of half a million blooms, and Deep Ellum's murals, patios and festival season wake back up.</p></div>
+          <div class="season"><span class="s-name">Summer</span><h4>Fair Park Fourth</h4><p>Fireworks over the Cotton Bowl on July 4, and Juneteenth celebrations that run deep in South Dallas &mdash; minutes from the house.</p></div>
+          <div class="season"><span class="s-name">Fall</span><h4>State Fair of Texas</h4><p>Every autumn, Fair Park hosts the State Fair &mdash; Big Tex, corny dogs and all. It's a short ride from the front door.</p></div>
+          <div class="season"><span class="s-name">Winter</span><h4>Lights &amp; countdowns</h4><p>Holiday lights across the city, then New Year's Eve fireworks off Reunion Tower downtown to close the year.</p></div>
+        </div>
+        <div class="landmarks">
+          <div class="season"><span class="s-name">The comeback &middot; Nov 2026</span><h4>The Forest Theater</h4><p>South Dallas' 1949 landmark on MLK Jr. Blvd &mdash; the "Apollo of the South," where B.B. King and Erykah Badu once played &mdash; just reopened after a $75M+ restoration.</p></div>
+          <div class="season"><span class="s-name">The history &middot; Year-round</span><h4>Dealey Plaza &amp; the JFK Memorial</h4><p>Ten minutes away downtown: the JFK Memorial Plaza and the Sixth Floor Museum tell one of the most consequential stories in American history.</p></div>
+        </div>
       </div>
       <div class="btns" style="margin-top:30px">
         <a class="btn solid" href="https://www.airbnb.com/rooms/1471828201669787454">Book on Airbnb</a>
