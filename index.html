@@ -86,6 +86,8 @@
   .news a.mine{background:var(--fudge);color:var(--white)}
   .news a.mine .src{color:#F3E6DB}
   .mapnote{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--label);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#F0E3D8;margin-top:18px}
+  .tvlbl{font-family:var(--label);font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#F3E6DB;margin:26px 0 10px}
+  .tv{background:rgba(253,252,250,.96);border-radius:12px;padding:4px 2px;overflow:hidden;min-height:48px}
 
   /* ---------- White "bowl" panels ---------- */
   .ave{background:var(--white);padding:70px 0;box-shadow:0 34px 60px -38px rgba(30,20,14,.55)}
@@ -239,6 +241,31 @@
         <a href="https://dallasinnovates.com/dallas-anchors-dfws-49-fortune-1000-headquarters-spread-across-11-cities/" target="_blank" rel="noopener"><span class="src">Dallas Innovates &middot; 2026</span><span class="hl">DFW holds 24 Fortune 500 headquarters &mdash; and AT&amp;T's new Plano campus arrives in 2028.</span></a>
         <a class="mine" href="https://www.linkedin.com/in/portfoliobyanderson" target="_blank" rel="noopener"><span class="src">Derrick on LinkedIn</span><span class="hl">From Wall Street to Y'all Street &mdash; my running take on the migration I work in.</span></a>
       </div>
+      </div>
+      <p class="tvlbl">Live &middot; Texas on the market</p>
+      <div class="tv">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+          {
+            "symbols": [
+              {"proName": "NYSE:DHI", "title": "D.R. Horton · Arlington"},
+              {"proName": "NYSE:INVH", "title": "Invitation Homes · Dallas"},
+              {"proName": "NYSE:CBRE", "title": "CBRE · Dallas"},
+              {"proName": "NYSE:CPT", "title": "Camden Property · Houston"},
+              {"proName": "NYSE:HHH", "title": "Howard Hughes · The Woodlands"},
+              {"proName": "NYSE:TPL", "title": "Texas Pacific Land · Dallas"},
+              {"proName": "NYSE:T", "title": "AT&T · Dallas"},
+              {"proName": "NASDAQ:TXN", "title": "Texas Instruments · Dallas"}
+            ],
+            "showSymbolLogo": true,
+            "isTransparent": true,
+            "displayMode": "adaptive",
+            "colorTheme": "light",
+            "locale": "en"
+          }
+          </script>
+        </div>
       </div>
       <div class="mapnote"><span>Fig. 01 — The move I made myself, and the one I work in.</span><span>Portfolio By Anderson</span></div>
     </div>
